@@ -1,6 +1,8 @@
 /*! angular-breadcrumb - v0.4.1-dev-2016-04-12
 * http://ncuillery.github.io/angular-breadcrumb
-* Copyright (c) 2016 Nicolas Cuillery; Licensed MIT */
+* Copyright (c) 2016 Nicolas Cuillery; Licensed MIT
+* @forked by Kyo
+* */
 
 (function (window, angular, undefined) {
 'use strict';
