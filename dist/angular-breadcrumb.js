@@ -248,9 +248,9 @@ function BreadcrumbDirective($interpolate, $breadcrumb, $rootScope) {
                     angular.forEach(scope.steps, function (step) {
                         if (step.ncyBreadcrumb && step.ncyBreadcrumb.label) {
                             var parseLabel = $interpolate(step.ncyBreadcrumb.label);
-                            step.ncyBreadcrumbLabel = parseLabel(viewScope);
+                            step.ncyBreadcrumbLabel = parseLabel(viewScope) || parseLabel(scope.$parent);
                             // Watcher for further viewScope updates
-                            registerWatchers(labelWatchers, parseLabel, viewScope, step);
+                            // registerWatchers(labelWatchers, parseLabel, viewScope, step);
                         } else {
                             step.ncyBreadcrumbLabel = step.name;
                         }
