@@ -256,11 +256,19 @@
 
                         var viewScope = $breadcrumb.$getLastViewScope();
                         scope.steps = $breadcrumb.getStatesChain();
+                        scope.skippedMenuItem = [];
                         $rootScope.$on('$translateChangeSuccess', function () {
                             $timeout(function () {
                                 setLabels(viewScope);
                             });
                         });
+                        $rootScope.$on('$breadcrumbMenuResize', function (event, skippedMenuItem) {
+                            if (skippedMenuItem.length !== scope.skippedMenuItem.length) {
+                                scope.skippedMenuItem = skippedMenuItem;
+                            }
+                            // console.log('$breadcrumbMenuResize', data);
+                        });
+
                         setLabels(viewScope);
                     };
 
